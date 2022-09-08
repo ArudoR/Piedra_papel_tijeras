@@ -1,6 +1,6 @@
 // 1 es piedra, 2 es papel, 3 es tijeras. 
 let jugador = 0;
-let pc = Math.floor(Math.random()*3)+1;
+let pc = aleatorio(1, 3);
 
 jugador = prompt("Elige: 1 para piedra, 2 para papel, 3 para tijeras");
 // alert("Elegiste " + jugador);
@@ -12,7 +12,7 @@ if(jugador == 1){
 }else if(jugador == 3){
     alert("Elegiste ✂️");
 }else{
-    alert("Elegiste PERDER 3=====D 💦");
+    alert("Elegiste PERDER");
 }
 
 if(pc == 1){
@@ -31,4 +31,10 @@ if(pc == jugador){
     alert("¡¡GANASTE!!");
 }else{
     alert("¡¡PERDISTE!!");
+}
+
+//Funcion numero aleatorio
+
+function aleatorio(min, max){
+    return Math.floor(Math.random() * (max - min + 1) +min);
 }
