@@ -26,12 +26,8 @@ if(pc == 1){
 //COMBATE
 
 if(pc == jugador){
-    alert("¡¡EMPATE!!");2
-}else if(jugador == 1 && pc == 3){
-    alert("¡¡GANASTE!!");
-}else if(jugador == 2 && pc == 1){
-    alert("¡¡GANASTE!!");
-}else if(jugador == 3 && pc == 2){
+    alert("¡¡EMPATE!!");
+}else if((jugador == 1 && pc == 3) || (jugador == 2 && pc == 1) || (jugador == 3 && pc == 2)){
     alert("¡¡GANASTE!!");
 }else{
     alert("¡¡PERDISTE!!");
