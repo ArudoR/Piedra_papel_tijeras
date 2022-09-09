@@ -18,22 +18,37 @@ function eleccion(jugada){
 
     return resultado;
 }
+
+//Creamos una funcion para guardar el combate.
+
+
 // 1 es piedra, 2 es papel, 3 es tijeras. 
 let jugador = 0;
-let pc = aleatorio(1, 3);
+let pc = 0;
+let triunfos = 0;
+let perdidas = 0;
 
-jugador = prompt("Elige: 1 para piedra, 2 para papel, 3 para tijeras");
-// alert("Elegiste " + jugador);
 
-alert("Tu eliges: " + eleccion(jugador));
-alert("PC elige: " + eleccion(pc));
+while(triunfos < 3 && perdidas < 3){
+     pc = aleatorio(1, 3);
 
-//COMBATE
+    jugador = prompt("Elige: 1 para piedra, 2 para papel, 3 para tijeras");
+    // alert("Elegiste " + jugador);
 
-if(pc == jugador){
-    alert("¡¡EMPATE!!");
-}else if((jugador == 1 && pc == 3) || (jugador == 2 && pc == 1) || (jugador == 3 && pc == 2)){
-    alert("¡¡GANASTE!!");
-}else{
-    alert("¡¡PERDISTE!!");
+    alert("Tu eliges: " + eleccion(jugador));
+    alert("PC elige: " + eleccion(pc));
+
+    //COMBATE
+
+    if(pc == jugador){
+        alert("¡¡EMPATE!!");
+    }else if((jugador == 1 && pc == 3) || (jugador == 2 && pc == 1) || (jugador == 3 && pc == 2)){
+        alert("¡¡GANASTE!!");
+        triunfos ++;
+    }else{
+        alert("¡¡PERDISTE!!");
+        perdidas ++;
+    }   
 }
+
+alert("Ganaste " + triunfos + " veces. Perdiste " + perdidas + " veces.");
